@@ -1,0 +1,99 @@
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: $color-default-white;
+  z-index: 10;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 110px;
+    max-width: 1440px;
+    padding: 25px 30px;
+    padding-bottom: 35px;
+    margin: 0 auto;
+  }
+
+  &--hiding {
+    animation-name: slide-top;
+  }
+
+  &--opening {
+    animation-name: slide-bottom;
+  }
+
+  @include vp--1023 {
+    &__wrapper {
+      min-height: 80px;
+      padding: 25px 30px;
+    }
+  }
+
+  @include vp--767 {
+    &__wrapper {
+      min-height: 60px;
+      padding: 20px;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.header--fixed {
+  position: fixed;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+
+  .header__wrapper {
+    min-height: 80px;
+    padding: 15px 20px;
+  }
+
+  @include vp--1023 {
+    .header__wrapper {
+      min-height: 60px;
+    }
+  }
+}
+
+.header__logo {
+  &--desktop {
+    display: block;
+
+    @include vp--767 {
+      display: none;
+    }
+  }
+
+  &--mobile {
+    display: none;
+
+    @include vp--767 {
+      display: block;
+    }
+  }
+}
+
+@keyframes slide-top {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -150px;
+  }
+}
+
+@keyframes slide-bottom {
+  from {
+    top: -150px;
+  }
+
+  to {
+    top: 0;
+  }
+}

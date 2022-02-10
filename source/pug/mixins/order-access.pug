@@ -1,0 +1,16 @@
+mixin order-access()
+  section.order-access.container
+    .order-access__bg-wrapper
+      .order-access__message-wrapper
+        h2.order-access__header
+          | Have access to&nbsp;every order, at&nbsp;all times. Even if&nbsp;you&rsquo;re not at&nbsp;the reception.
+        p.order-access__description
+          | A&nbsp;single admin panel allows you to&nbsp;manage guest orders 
+          | from a&nbsp;computer and from a&nbsp;smartphone. Connect your notification
+          | to&nbsp;Telegram bot for the best responsiveness. You won&rsquo;t miss them
+          | even when you&rsquo;re not around computer.
+
+      .order-access__img-wrapper.order-access__img-wrapper--desktop
+        +picture("content", "order-access-background", "png", 600, 570, "Доступ ко всем заказам")
+      .order-access__img-wrapper.order-access__img-wrapper--mobile
+        +picture("content", "order-access-background-mobile", "png", 280, 166, "Доступ ко всем заказам")

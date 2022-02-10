@@ -1,0 +1,29 @@
+.partners-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @include vp--1023 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+.partners-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 252px;
+  padding: 28px 0;
+
+  @include vp--1023 {
+    padding: 0 25px;
+    margin: 0 auto;
+
+    svg {
+      width: 100%;
+    }
+  }
+}

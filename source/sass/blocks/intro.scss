@@ -1,0 +1,204 @@
+.intro {
+  height: 110vh;
+
+  @include vp--1023 {
+    height: auto;
+  }
+}
+
+.intro.container {
+  padding-top: 110px;
+
+  @include vp--1023 {
+    padding-top: 90px;
+  }
+
+  @include vp--767 {
+    padding-top: 67px;
+  }
+}
+
+.intro__wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  padding: 30px;
+
+  @include vp--1023 {
+    min-height: 400px;
+    padding: 20px;
+  }
+}
+
+.intro__qr {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+
+  @include vp--1023 {
+    display: none;
+  }
+}
+
+.intro__qr-text {
+  position: relative;
+  max-width: 272px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: -0.5px;
+  color: $color-default-white;
+}
+
+.intro__qr-title,
+.intro__qr-description {
+  margin: 0;
+}
+
+.intro__qr-description {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.intro__qr-code {
+  width: 110px;
+  height: 110px;
+  margin-right: 25px;
+  border-radius: 12px;
+  background-color: $color-default-white;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.intro__qr-arrow {
+  position: absolute;
+  bottom: -16px;
+  left: -10px;
+}
+
+.intro__title {
+  width: 65%;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 74px;
+  letter-spacing: -0.4px;
+  color: $color-default-white;
+  text-align: left;
+  padding-bottom: 30px;
+  margin: 0;
+
+  @include vp--1023 {
+    font-size: 34px;
+    line-height: 37px;
+    letter-spacing: -0.4px;
+  }
+
+  @include vp--767 {
+    width: 100%;
+  }
+}
+
+.intro__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 32px;
+  overflow: hidden;
+  z-index: -1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(118.87deg, #000000 0%, #483322 0.01%, rgba(0, 0, 0, 0) 65.27%);
+    z-index: 4;
+  }
+
+  @include vp--1023 {
+    border-radius: 20px;
+  }
+}
+
+.intro__media-cover {
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 30%;
+  }
+}
+
+.intro__media-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+ video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 30%;
+  }
+
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
+}
+
+.intro__demo {
+  display: none;
+  margin-top: auto;
+
+  @include vp--1023 {
+    display: block;
+  }
+}
+
+.intro__demo-link {
+  display: block;
+
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+
+  width: fit-content;
+  max-width: 240px;
+  padding: 7px 16px 9px;
+  background-color: $color-default-black;
+  border-radius: 30px;
+
+  color: $color-default-white;
+  transition: color $trans--300;
+
+  &:hover,
+  &:focus {
+    color: $color-green-yellow;
+  }
+
+  &:active {
+    background-color: $color-raven;
+  }
+
+  &--disabled {
+    color: $color-gull-grey;
+    background-color: $color-gull-grey;
+  }
+}

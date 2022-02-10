@@ -1,0 +1,24 @@
+-
+  const roomInfo = {
+    heading: {
+      class: "room-service__title",
+      text: "Get inspired on how to&nbsp;promote the app"
+    },
+    paragraph: {
+      class: "room-service__header-description",
+      text: "The ways guests can access the Web App from their own device"
+    }
+  };
+
+
+mixin room-service()
+  section.room-service.container
+    +section-header(roomInfo)
+    ul.room-service__list
+      each card in roomCard
+        li.room-service__item
+          .room-service__img
+            +picture('content', card.path, card.format, card.width, card.height, card.alt)
+          .room-service__wrapper
+            p.room-service__header!=card.header
+            p.room-service__description!=card.text

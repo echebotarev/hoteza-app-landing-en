@@ -1,0 +1,46 @@
+-
+  const questions = [
+    {
+      question: "How long does it&nbsp;take to&nbsp;have a&nbsp;live version of&nbsp;the web app?",
+      answer: "Launching the web app is&nbsp;a&nbsp;joined process between hotel and Hoteza, so&nbsp;the activities will depend on&nbsp;various things: from design customization and approval, delivery of&nbsp;the content information and visual materials, type of&nbsp;the property, etc. It&nbsp;usually takes around 2 weeks or&nbsp;more to&nbsp;set the system up."
+    },
+    {
+      question: "Which address our application will have?",
+      answer: "The customized URL will look like this: hotel.hoteza.app.</br> Instead of&nbsp;'hotel'&nbsp;&mdash; the name of&nbsp;your hotel."
+    },
+    {
+      question: "What is&nbsp;required from the hotel to&nbsp;fill the application with contents?",
+      answer: "The contents of&nbsp;the application depends on&nbsp;the hotel and what they want to&nbsp;communicate to&nbsp;the guests. Most often, content contains basic hotel information and directory, overview of&nbsp;the services with the possibility to&nbsp;request them, hotel <nobr>in-room</nobr> dining menu with the possibility of&nbsp;ordering, as&nbsp;well as&nbsp;any other services the hotel can offer: booking of&nbsp;their restaurant tables, SPA treatments or&nbsp;gifts available for purchase in&nbsp;the hotel gift store. </br>Hotels often use web app to&nbsp;display information about the special events, promotions or&nbsp;any other experience guests might find enjoyable during their stay.</br> The content can be&nbsp;sent in&nbsp;any format convenient for you: we&nbsp;will fill out everything for you. After deployment and integrations, the hotel staff can independently edit the content through an&nbsp;intuitive admin panel (CMS)."
+    },
+    {
+      question: "What is&nbsp;required to&nbsp;customize the application?",
+      answer: "To&nbsp;customize an&nbsp;application design (logo, color scheme and fonts)&nbsp;&mdash; a&nbsp;hotel brand book is&nbsp;required. In&nbsp;case there is&nbsp;no&nbsp;hotel brand book, the application can be&nbsp;customized based on&nbsp;the official hotel website design with logo provided."
+    },
+    {
+      question: "What are the benefits of PMS integration?",
+      answer: "PMS integration is available in Pro version and provides the following benefits: &mdash;&nbsp;automated guest profile syncing between PMS and Web App;&nbsp; </br>&mdash; billing to guest room;&nbsp; </br>&mdash; automated welcome mail or WhatsApp message upon check-in with personal QR code;&nbsp; </br>&mdash; sending messages to guests right from PMS;&nbsp; </br>&mdash; viewing bill and express checkout."
+    },
+    {
+      question: "How purchasing works when payment gateway is connected?",
+      answer: "Payment gateway integration is available in Pro version. Purchases are processed right into the hotel account via connected payment gateway."
+    },
+    {
+      question: "Which online payment methods are available for guests?",
+      answer: "Online card payments, Apply Pay, Google Pay. Local fast payment systems may be connected upon request."
+    }
+  ]
+
+
+mixin questions()
+  section.questions.container
+    h2.questions__title!= "Frequently Asked Questions"
+    ul.questions__list(data-accordion="parent" data-single data-close-inner)
+      each element in questions
+        li.questions__element(data-accordion="element")
+          button(class="questions__button" type="button" data-accordion="button")
+            span.questions__button-title!= element.question
+            span.questions__button-icon
+              +icon("icon-arrow-down", 22, 12)
+          .questions__content(data-accordion="content")
+            .questions__content-wrapper
+              p.questions__answer!= element.answer

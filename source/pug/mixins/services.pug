@@ -1,0 +1,24 @@
+
+-
+  const servicesInfo = {
+    heading: {
+      class: "services__title",
+      text: "Works right in&nbsp;the smartphone browser"
+    },
+    paragraph: {
+      class: "services__header-description",
+      text: "All hotel service avaliable straightaway. Skip&nbsp;the&nbsp;download entirely and let your guests access Web App on&nbsp;their smartphone."
+    }
+  };
+
+
+mixin services()
+  section.services.container
+    +section-header(servicesInfo)
+    ul.services__list
+      each card in servicesCard
+        li.services__item
+          .services__img
+            +picture('content', card.path, card.format, card.width, card.height, card.alt)
+          p.services__header!=card.header
+          p.services__description!=card.text

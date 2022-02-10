@@ -1,0 +1,15 @@
+-
+  const connectLinkData = {
+    text: "Join Now"
+  };
+
+mixin connect()
+  section.connect.container
+    .connect__wrapper
+      .connect__icon
+        +icon("icon-hoteza-app", 70, 70)
+      h2.connect__title!= "Start effectively selling hotel&nbsp;services online"
+      p.connect__description!= "Hoteza Web will help you optimize your reception, increase your average bill and&nbsp;make your guests even more comfortable."
+      button(type="button" data-open-modal="conversational" class="btn connect__link")!=connectLinkData.text
+        span.connect__link-icon
+          +icon("icon-arrow-right-bold", 16, 16)

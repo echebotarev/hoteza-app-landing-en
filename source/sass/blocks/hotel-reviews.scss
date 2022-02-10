@@ -1,0 +1,166 @@
+.hotel-reviews {
+  position: relative;
+  overflow: hidden;
+
+  @include vp--1023 {
+    padding-bottom: 13px;
+  }
+}
+
+.hotel-reviews__header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 55px;
+
+  @include vp--1023 {
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+}
+
+.hotel-reviews__title {
+  margin: 0;
+  margin-right: 5%;
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 58px;
+  letter-spacing: -0.4px;
+  color: $color-default-black;
+
+  @include vp--1023 {
+    width: 55%;
+    font-size: 36px;
+    line-height: 39px;
+    letter-spacing: -1.6px;
+  }
+
+  @include vp--374 {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.hotel-reviews__nav {
+  margin-left: auto;
+
+  @include vp--374 {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+
+.hotel-reviews__btn {
+  padding: 10px;
+  background: none;
+  border: none;
+  color: $color-default-black;
+  cursor: pointer;
+  transition: color .3s ease-in-out;
+
+  &:hover {
+    color: $color-raven;
+  }
+
+  &--next {
+    margin-left: 50px;
+  }
+
+  &--disabled {
+    color: $color-link-water;
+    pointer-events: none;
+  }
+
+  @include vp--1023 {
+    &--next {
+      margin-left: 0;
+    }
+
+    &:hover {
+      color: $color-default-black;
+    }
+  }
+}
+
+.hotel-reviews__content {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include vp--1023 {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hotel-reviews__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32%;
+  height: fit-content;
+  max-height: 512px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+  }
+
+  @include vp--1023 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.hotel-reviews__message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 68%;
+  padding-left: 50px;
+  font-weight: 500;
+  color: $color-default-black;
+  //letter-spacing: -0.4px;
+
+  @include vp--1023 {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.hotel-reviews__comment,
+.hotel-reviews__name,
+.hotel-reviews__position {
+  margin: 0;
+}
+
+.hotel-reviews__comment {
+  margin-bottom: 95px;
+  font-size: 46px;
+  line-height: 51px;
+
+  p {
+    margin: 0;
+  }
+
+  @include vp--1023 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+.hotel-reviews__name {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.hotel-reviews__position {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 30px;
+  color: $color-raven;
+}

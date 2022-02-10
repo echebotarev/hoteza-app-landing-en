@@ -1,0 +1,186 @@
+.order-access {
+  @include vp--767 {
+    padding-top: 39px;
+  }
+}
+
+.order-access__bg-wrapper {
+  position: relative;
+  display: flex;
+  background-color: $color-white-smoke;
+  border-radius: 20px;
+  min-height: 720px;
+
+  @include vp--1023 {
+    min-height: 750px;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 90px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include vp--767 {
+    padding-top: 90px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 53px;
+  }
+}
+
+.order-access__message-wrapper {
+  max-width: 756px;
+  padding-left: 60px;
+
+  @include vp--1279 {
+    max-width: 500px;
+    padding-left: 20px;
+  }
+
+  @include vp--1023 {
+    max-width: 76%;
+    padding-left: 0;
+  }
+
+  @include vp--1023 {
+    max-width: 85%;
+    padding-left: 0;
+  }
+}
+
+.order-access__img-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @include vp--1439 {
+    width: 500px;
+    top: calc(20% - 66px);
+  }
+
+  &--desktop {
+    display: block;
+
+    @include vp--1023 {
+      display: none;
+    }
+  }
+
+  &--mobile {
+    display: none;
+
+    @include vp--1023 {
+      position: relative;
+      display: block;
+      width: 57%;
+      overflow: visible;
+    }
+
+    @include vp--767 {
+      width: 84%;
+    }
+  }
+}
+
+.order-access__img-wrapper img {
+  padding-top: 32px;
+
+  @include vp--1023 {
+    overflow: visible;
+    width: 100%;
+    max-height: 350px;
+    -webkit-filter: drop-shadow(5.8px 5.8px 18.6px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(5.8px 5.8px 18.6px rgba(0, 0, 0, 0.2));
+  }
+}
+
+.order-access__header {
+  position: relative;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -0.4px;
+  text-align: center;
+
+  padding-top: 215px;
+  padding-left: 32px;
+  margin-bottom: 48px;
+
+  @include vp--1279 {
+    padding-left: 0;
+    padding-top: 115px;
+  }
+
+  @include vp--1023 {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: -0.4px;
+    padding-top: 60px;
+  }
+
+  @include vp--1023 {
+    margin-bottom: 20px;
+  }
+
+  @include vp--767 {
+    padding-top: 44px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: calc(49% - 84px);
+    left: calc(49% - 7px);
+
+    background-image: url("../img/sprite/icon-order-access.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: visible;
+
+    @include vp--1279 {
+      top: calc(49% - 123px);
+      left: calc(49% - 31px);
+    }
+
+    @include vp--767 {
+      top: calc(54% - 76%);
+    }
+  }
+}
+
+.order-access__description {
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  //letter-spacing: -0.4px;
+  text-align: center;
+  color: $color-black-transparent;
+  padding-left: 38px;
+
+  @include vp--1279 {
+    padding-left: 0;
+  }
+
+  @include vp--1023 {
+    font-weight: 400;
+    line-height: 28px;
+    //letter-spacing: -0.4px;
+  }
+
+  @include vp--767 {
+    font-weight: 400;
+    line-height: 28px;
+    //letter-spacing: -0.4px;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+}

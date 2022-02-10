@@ -1,0 +1,70 @@
+.customization__examples {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px;
+  min-height: 700px;
+  // padding-left: 70px;
+  // padding-right: 60px;
+  // padding-top: 75px;
+  background-color: $color-white-smoke;
+  border-radius: 20px;
+  overflow: hidden;
+
+  @include vp--1023 {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    min-height: auto;
+    padding-top: 50px;
+    padding-bottom: 68px;
+  }
+}
+
+.customization__example {
+  position: absolute;
+  width: 27.5%;
+
+  img {
+    width: 100%;
+  }
+
+  &--green {
+    top: 75px;
+    left: 70px;
+  }
+
+  &--white {
+    top: -109px;
+    left: 50.5%;
+    transform: translateX(-50%);
+  }
+
+  &--red {
+    top: 75px;
+    right: 60px;
+  }
+
+  @include vp--1023 {
+    top: 50px;
+    width: 48%;
+
+    &--green {
+      position: relative;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--white {
+      left: initial;
+      right: -26%;
+      transform: translateX(0);
+    }
+
+    &--red {
+      left: -26%;
+    }
+  }
+}
+
+

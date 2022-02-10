@@ -1,0 +1,24 @@
+mixin features()
+  section.features.container
+    ul.features__list
+      li.features__item
+        .features__item-icon
+          +icon("icon-covid", 80, 80)
+          p.features__header.features__header--covid
+            | Effective safety measure against <nobr>COVID-19</nobr>
+          p.features__text
+            | Hoteza Web makes the guests' stay safer by&nbsp;minimizing face-to-face 
+            | contact with the hotel staff. Everything guests might like, 
+            | need or&nbsp;ask can be&nbsp;addressed through the chat.
+
+
+      li.features__item
+        .features__item-icon
+          +icon("icon-integration", 80, 80)
+        p.features__header.features__header--integration
+          span
+          | PMS, GRMS, and SOS integrations
+        p.features__text
+          | PMS guest profile syncing, personal app links and guest bill posting, 
+          | easy integration with service optimization systems, room control 
+          | and much more!

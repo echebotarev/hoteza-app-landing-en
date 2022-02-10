@@ -1,0 +1,22 @@
+// убрал margin 50px 0, в wrapper чтоб блок встал по пиксель перфект
+.section-message__wrapper {
+  padding: 30px;
+  background-color: $color-green-yellow;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 51px;
+  //letter-spacing: -0.4px;
+  color: $color-default-black;
+
+  @include vp--1023 {
+    padding: 20px;
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 600;
+  }
+}
+
+.section-message__info {
+  margin: 0;
+}

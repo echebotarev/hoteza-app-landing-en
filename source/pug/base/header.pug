@@ -1,0 +1,17 @@
+mixin header(headerMods, currentPage)
+  -
+    var headerLinks = [
+      {
+        href: "#",
+        text: "Join Now",
+        modalName: "conversational"
+      },
+    ]
+
+  header.header(class=headerMods)
+    .header__wrapper
+      .header__logo-wrapper
+        +icon("logo-lg", 200, 30).header__logo.header__logo--desktop
+        +icon("logo-mobile", 34, 25).header__logo.header__logo--mobile
+      .header__link
+        button(type="button" data-open-modal="conversational" class="btn btn--mobile")= "Join Now"

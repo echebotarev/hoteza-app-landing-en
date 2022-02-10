@@ -1,0 +1,155 @@
+.conversational {
+  display: flex;
+  flex-direction: column;
+}
+
+.conversational__context {
+  @include vp--767 {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 0;
+  }
+
+  flex-grow: 1;
+
+  width: 690px;
+  height: 412px;
+
+  border-radius: 10px;
+}
+
+.conversational form {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.conversational__code {
+  margin-top: 10px;
+  padding: 0;
+
+  border-radius: 12px;
+}
+
+.conversational-form {
+  &::before {
+    background: none !important;
+  }
+
+  & .conversational-form-inner {
+    padding: 5px !important;
+  }
+
+  & cf-chat-response {
+    @include vp--767 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+
+    font-family: $font-family--placeholder;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+
+  }
+
+  & cf-chat-response .show a {
+    position: relative;
+
+    color: $color-green-yellow;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 5px;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $color-green-yellow;
+    }
+  }
+
+  & cf-chat-response .show a:hover,
+  & cf-chat-response .show a:focus {
+    color: $color-inch-worm;
+
+    &::after {
+      background-color: $color-inch-worm;
+    }
+  }
+
+  & cf-chat-response.robot text > p {
+    background-color: $color-default-black;
+    color: $color-default-white;
+  }
+
+  & cf-chat-response.user text > p {
+    background-color: $color-green-yellow;
+    color: $color-default-black;
+  }
+
+  & cf-chat-response.can-edit:hover text > p {
+    background: $color-inch-worm;
+  }
+
+  & .inputWrapper input,
+  & .inputWrapper textarea {
+    background-color: $color-white-smoke-2;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  & .inputWrapper input:not(:hover),
+  & .inputWrapper textarea:not(:hover) {
+    box-shadow: none;
+  }
+
+  & .inputWrapper input,
+  & .inputWrapper textarea,
+  & .inputWrapper input::placeholder,
+  & .inputWrapper textarea::placeholder {
+    @include vp--767 {
+      font-size: 17px;
+      line-height: 17px;
+    }
+
+    font-family: $font-family--placeholder;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  & .inputWrapper input::placeholder,
+  & .inputWrapper textarea::placeholder {
+    color: $color-black-transparent-2;
+  }
+
+  & cf-input {
+    margin-bottom: 0;
+  }
+
+  & .cf-button {
+    @include vp--767 {
+      font-size: 12px;
+    }
+  }
+
+  & cf-input-button.cf-input-button {
+    border-radius: 0 5px 5px 0;
+    background-color: $color-default-black;
+  }
+
+  & .scrollableInner.scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &.done cf-chat-response.robot {
+    pointer-events: auto;
+  }
+}

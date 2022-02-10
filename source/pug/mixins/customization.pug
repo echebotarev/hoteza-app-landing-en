@@ -1,0 +1,23 @@
+-
+  const customizationInfo = {
+    heading: {
+      class: "customization__title",
+      text: "Completely matches the hotel&rsquo;s corporate identity"
+    },
+    paragraph: {
+      class: "customization__description",
+      text: "Hoteza Web has unlimited customization options that will be&nbsp;in&nbsp;full compliance with the corporate identity of&nbsp;the hotel."
+    }
+  };
+
+  const customizationImageColors = ["green", "white", "red"];
+
+mixin customization()
+  section.customization.container
+    +section-header(customizationInfo)
+    .customization__examples
+      each imageColor in customizationImageColors
+        .customization__example(class="customization__example--" + imageColor)
+          +picture("content", "custom-mobile-" + imageColor, "jpg", 380, 736, "Варианты кастомизаций")
+
+

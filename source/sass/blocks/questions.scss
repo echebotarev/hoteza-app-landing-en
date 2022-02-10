@@ -1,0 +1,129 @@
+.questions {
+  display: flex;
+  flex-wrap: wrap;
+  color: $color-default-black;
+
+  @include vp--1023 {
+    flex-direction: column;
+
+    &.container {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.questions__title {
+  width: 30%;
+  margin: 0;
+  margin-right: 4%;
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 58px;
+  letter-spacing: -0.4px;
+
+  @include vp--1023 {
+    width: 100%;
+    margin: 0 0 30px;
+    font-size: 36px;
+    line-height: 39px;
+    letter-spacing: -0.4px;
+  }
+}
+
+.questions__list {
+  width: 66%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @include vp--1023 {
+    width: 100%;
+  }
+}
+
+.questions__element {
+  border-bottom: 1px solid $color-solitude;
+
+  &.is-active {
+    padding-bottom: 23px;
+
+    .questions__button {
+      padding-bottom: 0;
+    }
+
+    .questions__button-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:first-child {
+    .questions__button {
+      padding-top: 0;
+    }
+  }
+
+  @include vp--1023 {
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+.questions__button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 22px 0;
+  background: none;
+  border: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.5px;
+  text-align: left;
+  color: $color-default-black;
+  cursor: pointer;
+  transition: padding 0.2s ease-in, color 0.3s ease-in-out;
+
+  &:hover {
+    color: $color-raven;
+  }
+
+  @include vp--1023 {
+    padding: 20px 0;
+    font-size: 21px;
+    line-height: 26px;
+    letter-spacing: 0;
+
+    &:hover {
+      color: $color-default-black;
+    }
+  }
+}
+
+.questions__button-title {
+  max-width: 720px;
+  margin-right: 5%;
+
+  @include vp--1023 {
+    margin-right: 10%;
+  }
+}
+
+.questions__button-icon {
+  margin-left: auto;
+  transition: transform .4s ease-in-out;
+}
+
+.questions__answer {
+  margin: 25px 0 0;
+  font-size: 22px;
+  line-height: 26px;
+  color: $color-black-transparent;
+
+  @include vp--1023 {
+    margin-top: 18px;
+    font-size: 21px;
+    line-height: 26px;
+  }
+}

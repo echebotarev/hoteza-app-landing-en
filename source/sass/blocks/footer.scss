@@ -1,0 +1,16 @@
+.footer {
+  padding: 50px;
+  padding-top: 10px;
+  text-align: center;
+  color: $color-black-transparent;
+
+  @include vp--1023 {
+    padding: 10px 15px 50px;
+  }
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: 18px;
+  line-height: 24px;
+}

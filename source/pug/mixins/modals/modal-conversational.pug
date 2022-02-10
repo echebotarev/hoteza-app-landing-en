@@ -1,0 +1,22 @@
+mixin modal-conversational()
+  p.modal__description Request Form
+  .conversational.modal__conversational(data-conversational="conversational")
+    form(id="form")
+      input(type="text", cf-questions="Hello! <br>Thank you for your interest in Hoteza Web App.&&Hoteza Web App will help you optimize reception workload, increase revenues and enhance guest experience.&&Please, write the name of your hotel", id="hotel", name="hotel", required)
+      input(type="text", cf-questions="Where is the hotel located?", id="location", name="location", required)
+      input(type="text", cf-questions="Please, introduce yourself", name="name", id="name", required)
+      fieldset(cf-questions="What is your preferred communication method?")
+        input(type="radio", name="type" id="phone" value="phone", required)
+        label(for="phone") Phone
+        input(type="radio", name="type" id="whatsapp" value="whatsapp", required)
+        label(for="whatsapp") WhatsApp
+        input(type="radio", name="type" id="email" value="email", required)
+        label(for="email") Email
+      input(type="tel", cf-questions="What is your phone number?", cf-conditional-type="phone||whatsapp", name="phone", pattern="[0-9]{10,12}", id="phone-text", cf-error="Phone number must contain 10-12 digits", required)
+      input(type="email", cf-questions="What is your email address?", cf-conditional-type="email", name="email", id="email-text",required)
+      fieldset(cf-questions = "Thank you for your request!<br>We will contact you as soon as possible.&&Have you tried our demo?")
+        input(type = "radio", name = "demo", id = "yes", value = "yes", cf-label = "Yes, I have tried", required)
+        input(type = "radio", name = "demo", id = "no", value = "no", cf-label = "No, please let me try", required)
+      cf-robot-message(cf-questions = "If you’re currently using smartphone, please click the link to <a href='https://demo.hoteza.app/?room=101&lastname=Nakamoto'>open demo</a>&&If you’re using computer, please use the camera of your smartphone to scan this QR code.<img class='conversational__code' src='img/content/qr-code.svg' width='150' height='150' alt='qr-code'>", cf-conditional-demo = "no")
+      cf-robot-message(cf-questions = "Great! We’ll be in touch with you soon!", cf-conditional-demo = "yes")
+    .conversational__context(data-conversational-context="conversational")

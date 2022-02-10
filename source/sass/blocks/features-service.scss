@@ -1,0 +1,94 @@
+.features-service {
+  min-height: 820px;
+
+  @include vp--1439 {
+    min-height: 800px;
+  }
+
+  @include vp--1279 {
+    min-height: 625px;
+  }
+
+  @include vp--1023 {
+    min-height: 480px;
+  }
+
+  @include vp--767 {
+    min-height: 396px;
+  }
+}
+
+.features-service__header {
+  position: relative;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -0.4px;
+  text-align: left;
+
+  color: $color-default-black;
+
+  padding-left: 446px;
+  padding-right: 180px;
+  padding-top: 115px;
+
+  @include vp--1439 {
+    padding-left: 363px;
+  }
+
+  @include vp--1279 {
+    padding-left: 271px;
+    padding-right: 15px;
+  }
+
+  @include vp--1023 {
+    font-size: 32px;
+    line-height: 34px;
+    //letter-spacing: -0.4px;
+    text-align: left;
+    padding-left: 271px;
+    padding-right: 100px;
+  }
+
+  @include vp--767 {
+    padding: 0;
+    margin: 0;
+    padding-right: 31px;
+    padding-left: 20px;
+    padding-top: 6px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    top: 61%;
+    left: 41%;
+
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    background-color: $color-green-yellow;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: visible;
+    z-index: -5;
+
+    @include vp--1439 {
+      $size: 52vw;
+      width: $size;
+      height: $size;
+    }
+
+    @include vp--767 {
+      $size: 335px;
+      width: $size;
+      height: $size;
+      top: 0%;
+      left: 0%;
+      transform: translate3d(0%, -4%, 0) scale(1);
+    }
+  }
+}

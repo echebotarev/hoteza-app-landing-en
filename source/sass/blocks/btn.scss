@@ -1,0 +1,51 @@
+.btn {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+
+  padding: 8px 16px;
+  background-color: $color-default-black;
+  border: none;
+  border-radius: 30px;
+
+  color: $color-default-white;
+  transition: color $trans--300;
+
+  &:hover,
+  &:focus {
+    color: $color-green-yellow;
+  }
+
+  &:active {
+    background-color: $color-raven;
+  }
+
+  &--disabled {
+    color: $color-gull-grey;
+    background-color: $color-gull-grey;
+  }
+
+  @include vp--767 {
+    &--mobile {
+      background-color: inherit;
+      color: $color-default-black;
+      padding: 0;
+      border-radius: 0;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: -0.46px;
+
+      &:hover,
+      &:focus {
+        color: unset;
+      }
+
+      &:active {
+        background-color: unset;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+-
+  const partnersList = ['partners-kempinski', 'partners-rocco', 'partners-hardrock', 'partners-corinthia', 'partners-ihg', 'partners-langham', 'partners-radisson', 'partners-hilton', 'partners-wyndham', 'partners-accor'];
+  const partnersInfo = {
+    heading: {
+      class: "partners__title",
+      text: "You’re&nbsp;in&nbsp;good company"
+    },
+    paragraph: {
+      class: "partners__description",
+      text: "More than 500 hotels all over the globe are Hoteza customers"
+    }
+  };
+
+mixin partners()
+  section.partners.container
+    +section-header(partnersInfo)
+    +partners-list(partnersList)

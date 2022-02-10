@@ -1,0 +1,25 @@
+-
+  const introLinkData = {
+    href: "https://demo.hoteza.app/?room=101&lastname=Nakamoto",
+    text: "Online Demo"
+  };
+
+mixin intro()
+  section.intro.container
+    .intro__wrapper
+      p.intro__title!= "All hotel services on&nbsp;the&nbsp;guest&rsquo;s device. No&nbsp;download needed."
+      .intro__demo
+        a(href=introLinkData.href class="intro__demo-link" target="_blank")!= introLinkData.text
+      .intro__qr
+        .intro__qr-code
+          +icon("icon-intro-qr", 110, 110)
+        .intro__qr-text
+          p.intro__qr-title!= "Try Our Demo"
+          p.intro__qr-description!= "Simply scan the QR code with your smartphone camera"
+          +icon("icon-qr-arrow", 55, 43).intro__qr-arrow
+      .intro__media
+        .intro__media-cover
+          +picture("content", "intro-background", "jpg", 1380, 770, "Все услуги вашего отеля сразу в телефоне гостя")
+        .intro__media-video
+          video(width="1380" height="770" preload="auto" loop muted playsinline)
+            source(src="video/hero.mp4" type="video/mp4")

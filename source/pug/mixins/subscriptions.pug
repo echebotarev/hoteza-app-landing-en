@@ -1,0 +1,89 @@
+-
+  const subscriptionsHeader = {
+    heading: {
+      class: "subscriptions__title",
+      text: "Only pay for the things that you need"
+    }
+  };
+  const subscriptionsInfo = [
+    {
+      class: "subscriptions__plan--white",
+      title: "Basic",
+      description: "Electronic brochure of&nbsp;all hotel services",
+      advantages: ["Web Application Management System", "QR&nbsp;code for quick guests access", "Web app branding", "Information pages", "Multilingual support", "Restaurant menus", "Photo gallery"],
+      price: {
+        month: "$99",
+        year: "$85",
+        old: "$99"   
+      }
+    },
+    {
+      class: "subscriptions__plan--grey",
+      title: "Pro",
+      description: "In-room dining and services, personalization and easy guest communication",
+      advantages: ["Welcome letter with the dynamic QR&nbsp;code for the guests", "Room service food ordering", "Reservation of&nbsp;restaurants and SPA services", "Booking of&nbsp;hotel services", "Telegram bot for staff", "Guest profile", "Chat with the guests", "Invoice display", "Express check-out", "Feedback module", "Marketing module", "Statistics module"],
+      advantagesTitle: "Includes every Basic features, as&nbsp;well as:",
+      price: {
+        month: "$249",
+        year: "$209",
+        old: "$249" 
+      }
+    },
+    {
+      icon: true,
+      class: "subscriptions__plan--black",
+      title: "Add-ons",
+      titleMobile: "Add-ons",
+      description: "Expanding the capabilities of&nbsp;the Web App Pro version through additional integrations",
+      advantages: ["Integration with the hotel PMS (recommended)", "Mobile TV remote", "Integration with POS and SOS systems", "Integration with GRMS and room equipment management", "Integration with a payment gateway for accepting online payments"],
+      advantagesTitle: "",
+      price: null
+    }
+  ];
+  const buttonsText = ["Billed yearly", "Billed monthly"];
+
+mixin subscriptions()
+  section.subscriptions.container
+    +section-header(subscriptionsHeader)
+    .subscriptions__content.is-year
+      .subscriptions__duration
+        .subscriptions__buttons
+          each text, i in buttonsText
+            if (i === 0)
+              button(type="button" class="subscriptions__btn subscriptions__btn--year active")!= text
+            else
+              button(type="button" class="subscriptions__btn subscriptions__btn--month")!= text
+        .subscriptions__duration-description
+          p!= "One-time fee for connecting, integrating and&nbsp;setting up&nbsp;content&nbsp;&mdash; $900"
+      +subscription-plans(subscriptionsInfo)
+
+mixin subscription-plans(plansInfo)
+  .subscriptions__swiper
+    .subscriptions__plans.swiper-wrapper
+      each planInfo in plansInfo
+        .subscriptions__plan-wrapper.swiper-slide
+          .subscriptions__plan(class=planInfo.class)
+            .subscriptions__plan-header
+              h3.subscriptions__plan-title= planInfo.title
+              if (planInfo.titleMobile)
+                p.subscriptions__plan-title-mob!= planInfo.titleMobile
+              p.subscriptions__plan-description!= planInfo.description
+              if (planInfo.icon)
+                .subscriptions__plan-header-icon
+                  +icon("icon-plan-add", 15, 28)
+            .subscriptions__advantages
+              if (planInfo.advantagesTitle)
+                p.subscriptions__advantages-title!= planInfo.advantagesTitle
+              ul.subscriptions__advantages-list
+                each advantage in planInfo.advantages
+                  li.subscriptions__advantage!= advantage
+            .subscriptions__price
+              if (planInfo.price)
+                .subscriptions__price-number
+                  .subscriptions__price-year!= planInfo.price.year
+                  .subscriptions__price-month!= planInfo.price.month
+                .subscriptions__price-period
+                  .subscriptions__price-head!= planInfo.price.old
+                  .subscriptions__price-foot /month
+              else
+                .subscriptions__price-request Per request

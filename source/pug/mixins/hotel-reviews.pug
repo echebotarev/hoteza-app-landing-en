@@ -1,0 +1,64 @@
+-
+  const reviewsData = [
+    {
+      image: {
+        path: "content",
+        name: "hotel-reviews-photo-1",
+        format: "jpg",
+        width: 440,
+        height: 512,
+        altText: "Caroline Rowe photo"
+      },
+      comment: "We&nbsp;were very happy to&nbsp;work with Hoteza. This solution gives us&nbsp;huge flexibility to&nbsp;give the guest an&nbsp;exciting, tailored experience. It’s&nbsp;also very easy to&nbsp;use and update for my&nbsp;team! ",
+      name: "Caroline Rowe",
+      position: "Director of Marketing &&nbsp;Communications, Media One Hotel Dubai"
+    },
+    {
+      image: {
+        path: "content",
+        name: "hotel-reviews-photo-2",
+        format: "jpg",
+        width: 440,
+        height: 512,
+        altText: "Vasja Čretni photo"
+      },
+      comment: "Hoteza has enabled us&nbsp;to&nbsp;extend the reach of&nbsp;our in-house marketing. In-house sales and event visits went up&nbsp;enormously.",
+      name: "Vasja Čretnik",
+      position: "Marketing and sales manager, Terme Olimia &amp;&nbsp;Terme Tuhelj"
+    },
+    {
+      image: {
+        path: "content",
+        name: "hotel-reviews-photo-3",
+        format: "jpg",
+        width: 440,
+        height: 512,
+        altText: "Elshan Babaev photo"
+      },
+      comment: "Together with Hoteza, we have&nbsp;made a&nbsp;big step forward. Hoteza&nbsp;is&nbsp;an&nbsp;innovative&nbsp;way to&nbsp;enhance the guest experience.",
+      name: "Elshan Babaev",
+      position: "General Director, The State Hermitage Museum Official Hotel "
+    }
+  ]
+
+mixin hotel-reviews()
+  section.hotel-reviews.container
+    .hotel-reviews__header
+      h2.hotel-reviews__title What hotels say
+      .hotel-reviews__nav
+        button.hotel-reviews__btn.hotel-reviews__btn--prev(type="button")
+          +icon("icon-arrow-left", 43, 38)
+        button.hotel-reviews__btn.hotel-reviews__btn--next(type="button")
+          +icon("icon-arrow-right", 43, 38)
+    .hotel-reviews__swiper
+      .hotel-reviews__content-wrapper.swiper-wrapper
+        each review in reviewsData
+          .hotel-reviews__content.swiper-slide
+            .hotel-reviews__image-wrapper
+              +picture(review.image.path, review.image.name, review.image.format, review.image.width, review.image.height, review.image.altText)
+            .hotel-reviews__message
+              .hotel-reviews__comment
+                p!= review.comment
+              .hotel-reviews__author
+                p.hotel-reviews__name!= review.name
+                p.hotel-reviews__position!= review.position

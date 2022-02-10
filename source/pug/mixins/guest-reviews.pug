@@ -1,0 +1,135 @@
+-
+  const guestReviewsHeader = {
+    heading: {
+      class: "guest-reviews__title",
+      text: "Reviews from guests"
+    }
+  };
+  const guestReviewsData = [
+    [
+      {
+        image: {
+          path: "content",
+          name: "guest-reviews-user-1",
+          format: "jpg",
+          width: 60,
+          height: 60,
+          altText: "Фото посетителя"
+        },
+        name: "Emilly Barrett",
+        comment: "I&rsquo;m a&nbsp;vegetarian and it&rsquo;s always a&nbsp;pain to&nbsp;go&nbsp;through every menu item when ordering. Concierge showed me&nbsp;how to&nbsp;filter before ordering the food, so&nbsp;much easier! The food was delicious, and the fact I&nbsp;did not have to&nbsp;read through hundreds of&nbsp;ingredients made it&nbsp;so&nbsp;much easier!",
+        companyLogo: {
+          name: "icon-booking-logo",
+          width: 110,
+          height: 19
+        }
+      },
+      {
+        image: {
+          path: "content",
+          name: "guest-reviews-user-4",
+          format: "jpg",
+          width: 60,
+          height: 60,
+          altText: "Фото посетителя"
+        },
+        name: "Christopher Doyle",
+        comment: "There&rsquo;s no&nbsp;need to&nbsp;find people around the hotel to&nbsp;communicate&nbsp;&mdash; saves so&nbsp;much time on&nbsp;a&nbsp;business trip to&nbsp;just open the chat and ask the question, even in&nbsp;the middle of&nbsp;the night. The magic of&nbsp;technology.",
+        companyLogo: {
+          name: "icon-tripadvisor-logo",
+          width: 120,
+          height: 18
+        }
+      }
+    ],
+    [
+      {
+        image: {
+          path: "content",
+          name: "guest-reviews-user-2",
+          format: "jpg",
+          width: 60,
+          height: 60,
+          altText: "Фото посетителя"
+        },
+        name: "Margaret Sims",
+        comment: "On&nbsp;my&nbsp;way to&nbsp;the hotel, I&nbsp;checked the email and clicked to&nbsp;the link to&nbsp;get to&nbsp;the app&nbsp;&mdash; my&nbsp;information was logged in, I&nbsp;did not have to&nbsp;do&nbsp;a&nbsp;thing, just order some food which was waiting for me&nbsp;by&nbsp;the time I&nbsp;got to&nbsp;the room.",
+        companyLogo: {
+          name: "icon-booking-logo",
+          width: 110,
+          height: 19
+        }
+      },
+      {
+        image: {
+          path: "content",
+          name: "guest-reviews-user-5",
+          format: "jpg",
+          width: 60,
+          height: 60,
+          altText: "Фото посетителя"
+        },
+        name: "Clare Hamilton",
+        comment: "The staff is&nbsp;friendly even under the masks and their hospitality extends to&nbsp;the whole stay! The web app greeted me&nbsp;by&nbsp;my&nbsp;name with a&nbsp;welcome message from the general manager himself! Five star experience!",
+        companyLogo: {
+          name: "icon-tripadvisor-logo",
+          width: 120,
+          height: 18
+        }
+      }
+    ],
+    [
+      {
+        image: {
+          path: "content",
+          name: "guest-reviews-user-3",
+          format: "jpg",
+          width: 60,
+          height: 60,
+          altText: "Фото посетителя"
+        },
+        name: "Thomas Fletcher",
+        comment: "I&nbsp;scheduled a&nbsp;back massage the second my&nbsp;plane landed. I&nbsp;went straight from check-in to&nbsp;SPA, no&nbsp;need to&nbsp;call anyone. Best experience ever!",
+        companyLogo: {
+          name: "icon-tripadvisor-logo",
+          width: 110,
+          height: 19
+        }
+      },
+      {
+        image: {
+          path: "content",
+          name: "guest-reviews-user-6",
+          format: "jpg",
+          width: 60,
+          height: 60,
+          altText: "Фото посетителя"
+        },
+        name: "Benedict French",
+        comment: "Just scanned the QR&nbsp;code in&nbsp;the room and during my&nbsp;entire stay, I&nbsp;ordered room service right from my&nbsp;phone. While I&nbsp;relaxed by&nbsp;the pool I&nbsp;ordered my&nbsp;dinner to&nbsp;the room and before I&nbsp;was back, the food was already waiting for me!",
+        companyLogo: {
+          name: "icon-booking-logo",
+          width: 110,
+          height: 19
+        }
+      }
+    ]
+  ];
+
+mixin guest-reviews()
+  section.guest-reviews.container
+    +section-header(guestReviewsHeader)
+    ul.guest-reviews__reviews-list
+      each column in guestReviewsData
+        li.guest-reviews__reviews-column
+          ul.guest-reviews__column-list
+            each review in column
+              li.guest-reviews__review
+                .guest-reviews__review-header
+                  .guest-reviews__review-img
+                    +picture(review.image.path, review.image.name, review.image.format, review.image.width, review.image.height, review.image.altText)
+                  .guest-reviews__review-info
+                    p.guest-reviews__review-name= review.name
+                    .guest-reviews__review-cite
+                      +icon(review.companyLogo.name, review.companyLogo.width, review.companyLogo.height)
+                p.guest-reviews__review-comment!= review.comment

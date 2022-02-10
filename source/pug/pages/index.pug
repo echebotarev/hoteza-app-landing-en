@@ -1,0 +1,36 @@
+extends ../base/layout
+
+block variables
+  - const title = "Hoteza Web" //- на страницах кроме главной используйте О нас — ProjectName
+  - const description = "All hotel services on the guest's device. No download needed."
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = "main" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    h1.visually-hidden Приложение Hoteza App
+    +intro()
+    +features()
+    +section-message("Get rid of&nbsp;all printed materials: one dynamic QR&nbsp;code can take the guests to&nbsp;your digital hotel directory within Web App. Allow your guests to&nbsp;order and pay for any services online, to&nbsp;help lighten the work load from the reception.", "upper-green-message")
+    +services()
+    +features-service()
+    +room-service()
+    +section-message("We&nbsp;can help you promote Web App in&nbsp;numerous ways. Connect it&nbsp;to&nbsp;your PMS, prepare a&nbsp;welcome email and printed materials, or&nbsp;redirect the guests right from the <nobr>Wi-Fi</nobr> connection page.", "middle-green-message")
+    +order-access()
+    +customization()
+    +partners()
+    +section-message("Easily connected to&nbsp;online payment via Apple Pay, Google Pay, bank card payments or&nbsp;posting to&nbsp;guest account through PMS.")
+    +subscriptions()
+    +hotel-reviews()
+    +guest-reviews()
+    +questions()
+    +connect()
+
+
+block modals
+  +modal("modal--conversational modal--no-scale modal--fit-content modal--conversational")(data-modal="conversational")
+    +modal-conversational()

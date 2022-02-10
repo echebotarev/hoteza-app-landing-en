@@ -1,0 +1,7 @@
+mixin section-header(sectionInfo)
+  - const { heading, paragraph } = sectionInfo;
+
+  .section-header
+    h2(class="section-header__title " + heading.class)!= heading.text
+    if (paragraph)
+      p(class="section-header__description " + paragraph.class)!= paragraph.text
