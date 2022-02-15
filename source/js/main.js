@@ -74,9 +74,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MHRR3P2');
 
+window.dataLayer = window.dataLayer || [];
 window.gtag = (args) => {
-  dataLayer.push(args);
+  window.dataLayer.push(args);
 };
+
+window.fbq = window.fbq || (() => {});
 
 const openFormBtn = document.querySelector('[data-open-modal="conversational"]');
 openFormBtn.addEventListener('click', () => {
