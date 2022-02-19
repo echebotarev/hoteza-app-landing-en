@@ -46,6 +46,22 @@ InitConversational.prototype = {
 
       const dispatcher = new EventDispatcher();
       const flowUpdateHandler = (evt) => {
+        // GA: поведение при оформлении покупки
+        if (evt.detail.step <= 5) {
+          window.gtag.ec({
+            'ecommerce': {
+              currencyCode: 'RUB',
+              checkout: {
+                actionField: {step: (evt.detail.step + 1)},
+              },
+            },
+            'event': 'gtm-ee-event',
+            'gtm-ee-event-category': 'Enhanced Ecommerce',
+            'gtm-ee-event-action': `Заполнение заявки. Step: ${evt.detail.step}`,
+            'gtm-ee-event-non-interaction': false,
+          });
+        }
+
         // eslint-disable-next-line no-unused-expressions
         if (evt.detail.step === 6) {
           submitCallback();

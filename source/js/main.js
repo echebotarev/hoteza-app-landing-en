@@ -75,8 +75,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MHRR3P2');
 
 window.dataLayer = window.dataLayer || [];
-window.gtag = (args) => {
-  window.dataLayer.push(args);
+window.gtag = (data) => {
+  window.dataLayer.push(Object.assign({'ecommerce': null, 'gtm-ee-event-non-interaction': false}, data));
+};
+
+// eslint-disable-next-line no-undef
+const initGtag = () => window.dataLayer.push(arguments);
+
+initGtag('require', 'ec');
+initGtag('js', new Date());
+
+window.gtag.ec = function (data) {
+  // eslint-disable-next-line no-undef
+  dataLayer.push({'ecommerce': null});
+  // eslint-disable-next-line no-undef
+  dataLayer.push(data);
 };
 
 window.fbq = window.fbq || (() => {});
