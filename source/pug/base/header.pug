@@ -3,7 +3,7 @@ mixin header(headerMods, currentPage)
     var headerLinks = [
       {
         href: "#",
-        text: "Join Now",
+        text: "Book a demo",
         modalName: "conversational"
       },
     ]
@@ -14,4 +14,4 @@ mixin header(headerMods, currentPage)
         +icon("logo-lg", 200, 30).header__logo.header__logo--desktop
         +icon("logo-mobile", 34, 25).header__logo.header__logo--mobile
       .header__link
-        button(type="button" data-open-modal="conversational" class="btn btn--mobile")= "Join Now"
+        button(type="button" data-open-modal="conversational" class="btn btn--mobile")= "Book a demo"
